@@ -1,0 +1,20 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: prcluster
+  region: ap-south-1
+nodeGroups:
+  - name: ng-micro
+    instanceType: t2.micro
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 5
+    ssh:
+      publicKeyName: pr
+  - name: ng-mixed-type
+    instanceType: t2.medium
+    desiredCapacity: 2
+    minSize: 2
+    maxSize: 5
+    ssh:
+      publicKeyName: pr
